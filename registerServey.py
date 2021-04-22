@@ -33,5 +33,5 @@ def registerServey(name, token):
 
     #response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
 
-    print(requests.post(URL, headers=headers, data=datas).text)
-    return 0
+    return requests.post(URL, headers=headers, data=json.dumps(datas)).text
+    
