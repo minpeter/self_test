@@ -15,6 +15,6 @@ def findUser(orgCode, loginType):
     headers = {'Content-Type': 'application/json; charset=utf-8'}
 
     response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
-    return response
+    return response["token"]
 
-# 예제 print(findUser())
+#예제 print(findUser("B100000662", "school"))

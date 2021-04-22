@@ -1,9 +1,11 @@
-from searchSchool import searchSchool
-from findUser import findUser
+from lib import searchSchool
+from lib import findUser
 from registerServey import registerServey
 
 
 
-UserInfo = findUser(searchSchool("한세사이버보안고등학교", "school")["orgCode"], "school")
+UserInfo = findUser.findUser(searchSchool.searchSchool("한세", "school", "01", "4")["orgCode"], "school")
 
-registerServey(UserInfo["userName"], UserInfo["token"])
+print(UserInfo)
+
+#registerServey(UserInfo["userName"], UserInfo["token"])
