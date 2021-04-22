@@ -1,11 +1,12 @@
 from lib import searchSchool
 from lib import findUser
-from registerServey import registerServey
+from lib import hasPassword
 
 
 
-UserInfo = findUser.findUser(searchSchool.searchSchool("한세", "school", "01", "4")["orgCode"], "school")
+Usertoken = findUser.findUser(searchSchool.searchSchool("한세", "school", "01", "4")["orgCode"], "school")
 
-print(UserInfo)
-
-#registerServey(UserInfo["userName"], UserInfo["token"])
+if hasPassword.hasPassword(Usertoken) == False:
+    print("자가진단 페이지에서 초기 비밀번호를 설정해주세요")
+else:
+    print("ㄹㄴㅇㅁㄻㄴㅇㄹ")
