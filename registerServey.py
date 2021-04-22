@@ -5,6 +5,8 @@ def registerServey(name, token):
     URL = 'https://senhcs.eduro.go.kr/registerServey'
       
     datas = {
+        "deviceUuid":"",
+        "rspns00":"Y",
         "rspns01":"1",
         "rspns02":"1",
         "rspns03":None,
@@ -20,8 +22,6 @@ def registerServey(name, token):
         "rspns13":None,
         "rspns14":None,
         "rspns15":None,
-        "rspns00":"Y",
-        "deviceUuid":"",
         "upperToken":str(token),
         "upperUserNameEncpt":str(name)
     }
