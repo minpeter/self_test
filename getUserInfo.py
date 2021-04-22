@@ -1,23 +1,18 @@
 import requests
+import json
 
-
-def getUserInfo():
+def getUserInfo(token):
     URL = 'https://senhcs.eduro.go.kr/v2/getUserInfo'
 
     datas = {
         'orgCode': 'B100000662',
         'userPNo': '2021000076'
         }
+
     headers = {
-
+        "Authorization": token,
+        'Content-Type': 'application/json'
     }
-    cookies = {
-        
-    }
-    response = requests.post(URL, data=datas, verify=False)
-    print('CODE:')
-    print(response.status_code)
-    return response.text
-
-# 예제 
-print(getUserInfo())
+    response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
+    return response["token"]
+# 예제 print(getUserInfo(token))

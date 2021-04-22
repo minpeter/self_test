@@ -1,11 +1,11 @@
 import requests
 import json
 
-def hasPassword(Usertoken):
+def hasPassword(token):
     URL = 'https://senhcs.eduro.go.kr/v2/hasPassword'
 
     headers = {
-        "Authorization": Usertoken,
+        "Authorization": token,
         'Content-Type': 'application/json; charset=utf-8'
     }
 

@@ -26,9 +26,12 @@ def registerServey(name, token):
         "upperUserNameEncpt":str(name)
     }
 
-    headers = {'Content-Type': 'application/json; charset=utf-8'}
+    headers = {
+        'Authorization': token,
+        'Content-Type': 'application/json'
+        }
 
     #response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
 
     print(requests.post(URL, headers=headers, data=datas).text)
-    return 1
+    return 0

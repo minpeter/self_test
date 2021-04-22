@@ -1,11 +1,11 @@
 import requests
 import json
 
-def validatePassword(Usertoken):
+def validatePassword(token):
     URL = 'https://senhcs.eduro.go.kr/v2/validatePassword'
 
     headers = {
-        "Authorization": Usertoken,
+        "Authorization": token,
         'Content-Type': 'application/json'
     }
 
