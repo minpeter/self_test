@@ -6,16 +6,17 @@ def findUser(orgCode, loginType, name, birthday):
     URL = 'https://senhcs.eduro.go.kr/v2/findUser'
     
     datas = {
-        "orgCode":str(orgCode),
+        "orgCode": orgCode,
         "name":encrypt.encrypt(name),
         "birthday":encrypt.encrypt(birthday),
         "stdntPNo":None,
-        "loginType":str(loginType)
+        "loginType": loginType
     }
 
-    headers = {'Content-Type': 'application/json; charset=utf-8'}
+    headers = {'Content-Type': 'application/json'}
 
     response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
+    print(response)
     return response["token"]
 
 #예제 print(findUser("B100000662", "school"))

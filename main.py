@@ -21,6 +21,7 @@ schoolType = json_data["schoolType"]
 print(json.dumps(json_data))
 
 orgCode = searchSchool.searchSchool(schoolName, loginType, schoolRegion, schoolType)
+
 token = findUser.findUser(orgCode, loginType, studentName, studentBirth)
 print(token)
 
@@ -33,6 +34,6 @@ else:
     print(token)
     token = getUserInfo(token)
     print(token)
-    print(registerServey("민웅기",token))
+    print(registerServey(schoolName, token))
 
     
