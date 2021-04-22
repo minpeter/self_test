@@ -16,7 +16,7 @@ def searchSchool(schoolname, loginType, lctnScCode, schulCrseScCode):
     if response["schulList"] == []:
         return "error"
     else:
-        return response["schulList"][0]
+        return response["schulList"][0]["orgCode"]
 
 
 # 예제 print(searchSchool("한세", "school", "01", "4"))
