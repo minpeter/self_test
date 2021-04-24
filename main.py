@@ -31,18 +31,19 @@ schoolurl = info["schoolurl"]
 orgCode = searchSchool(schoolName, loginType, schoolcode, schoollevel)
 
 Utoken = findUser(orgCode, loginType, studentName, studentBirth, schoolurl)
-print("사용자고유토큰:"+Utoken)
+print(f"사용자고유토큰:{Utoken}")
 
 if hasPassword(Utoken, schoolurl) == False:
     print("자가진단 페이지에서 초기 비밀번호를 설정해주세요")
 else:
-    VPtoken = validatePassword(Utoken,password, schoolurl)
-    print("로그인성공:"+VPtoken)
+    VPtoken = validatePassword(Utoken, password, schoolurl)
+    print(f"로그인성공:{VPtoken}")
     sugResponse = selectUserGroup(VPtoken, schoolurl)
     print(sugResponse)
     token = getUserInfo(sugResponse[0],orgCode,sugResponse[1], schoolurl)
-    print("유저식별성공:"+token)
-    print("자가진단에 성공하였습니다."+registerServey(schoolName, token, schoolurl))
+    print(f"유저식별성공:{token}")
+    registerServey(schoolName, token, schoolurl)
+    print("자가진단에 성공하였습니다.")
     
 
     
