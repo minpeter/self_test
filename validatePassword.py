@@ -1,10 +1,10 @@
 import requests
 import json
-import encrypt
+from encrypt import encrypt
 
 
-def validatePassword(token):
-    URL = 'https://senhcs.eduro.go.kr/v2/validatePassword'
+def validatePassword(token, pw, URL):
+    URL = f'https://{URL}hcs.eduro.go.kr/v2/validatePassword'
 
     headers = {
         "Authorization": token,
@@ -13,10 +13,12 @@ def validatePassword(token):
 
     datas = {
         "deviceUuid": "",
-        "password": encrypt.encrypt("050611")
+        "password": encrypt(pw)
+
+        #encrypt(pw)
     }
 
-    response = requests.post(URL, headers=headers, data=json.dumps(datas)).text
+    response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
     
     return response
 

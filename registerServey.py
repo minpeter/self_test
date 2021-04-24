@@ -1,8 +1,8 @@
 import requests
 import json
 
-def registerServey(name, token):
-    URL = 'https://senhcs.eduro.go.kr/registerServey'
+def registerServey(name, token, URL):
+    URL = f'https://{URL}hcs.eduro.go.kr/registerServey'
       
     datas = {
         "deviceUuid":"",

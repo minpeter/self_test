@@ -1,8 +1,8 @@
 import requests
 import json
 
-def getUserInfo(token):
-    URL = 'https://senhcs.eduro.go.kr/v2/getUserInfo'
+def getUserInfo(token,orgCode,userPNo, URL):
+    URL = f'https://{URL}hcs.eduro.go.kr/v2/getUserInfo'
 
     datas = {
         'orgCode': 'B100000662',

@@ -1,8 +1,8 @@
 import requests
 import json
 
-def hasPassword(token):
-    URL = 'https://senhcs.eduro.go.kr/v2/hasPassword'
+def hasPassword(token, URL):
+    URL = f'https://{URL}hcs.eduro.go.kr/v2/hasPassword'
 
     headers = {
         "Authorization": token,

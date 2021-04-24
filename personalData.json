@@ -3,6 +3,7 @@
     "studentName": "민웅기",
     "studentBirth": "050611",
     "loginType": "school",
-    "schoolRegion": "01",
-    "schoolType": "4"
+    "schoolRegion": "서울",
+    "schoolType": "고등",
+    "password" : "0611"
 }

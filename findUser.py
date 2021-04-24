@@ -1,19 +1,18 @@
 import requests
 import json
-import encrypt
+from encrypt import encrypt
 
-def findUser(orgCode, loginType, name, birthday):
-    URL = 'https://senhcs.eduro.go.kr/v2/findUser'
+def findUser(orgCode, loginType, name, birthday, URL):
+    URL = f'https://{URL}hcs.eduro.go.kr/v2/findUser'
     
     datas = {
         "orgCode": orgCode,
-        "name":encrypt.encrypt(name),
-        "birthday":encrypt.encrypt(birthday),
-        "stdntPNo":None,
+        "name": encrypt(name),
+        "birthday": encrypt(birthday),
+        "stdntPNo": None,
         "loginType": loginType
     }
-
-    headers = {'Content-Type': 'application/json'}
+    headers = {'Content-Type': 'application/json;charset=UTF-8'}
 
     response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
     print(response)
