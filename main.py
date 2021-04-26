@@ -2,7 +2,7 @@ from mapping import schoolinfo
 from selftest import selftest
 import json
 
-userNUM = 3
+userNUM = 5
 
 def calljson(jsonfilename):
     with open(f'userdata/{jsonfilename}.json', 'r') as f:
