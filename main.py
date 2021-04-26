@@ -15,7 +15,6 @@ with open('personalData.json', 'r') as f:
 schoolName = json_data["schoolName"]
 studentName = json_data["studentName"]
 studentBirth = json_data["studentBirth"]
-loginType = json_data["loginType"]
 schoolRegion = json_data["schoolRegion"]
 schoolType = json_data["schoolType"]
 password = json_data["password"]
@@ -27,6 +26,7 @@ schoolcode = info["schoolcode"]
 schoollevel = info["schoollevel"]
 schoolurl = info["schoolurl"]
 
+loginType = "school"
 
 orgCode = searchSchool(schoolName, loginType, schoolcode, schoollevel)
 

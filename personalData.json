@@ -1,9 +1,8 @@
 {
-    "schoolName": "한세",
+    "schoolName": "한세사이버보안고등학교",
     "studentName": "민웅기",
     "studentBirth": "050611",
-    "loginType": "school",
-    "schoolRegion": "서울",
-    "schoolType": "고등",
+    "schoolRegion": "서울특별시",
+    "schoolType": "고등학교",
     "password" : "0611"
 }
