@@ -2,8 +2,10 @@ from mapping import schoolinfo
 from selftest import selftest
 import json
 
+userNUM = 3
+
 def calljson(jsonfilename):
-    with open(f'{jsonfilename}.json', 'r') as f:
+    with open(f'userdata/{jsonfilename}.json', 'r') as f:
         json_data = json.load(f)
 
     schoolName = json_data["schoolName"]
@@ -25,5 +27,5 @@ def calljson(jsonfilename):
     selftest(schoolName, studentName, studentBirth, password, loginType, schoolCode, schoolLevel, schoolUrl)
 
 
-for i in range(3):
+for i in range(userNUM):
     calljson(f"user{i}data")
