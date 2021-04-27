@@ -15,17 +15,21 @@ def calljson(jsonfilename):
     schoolType = json_data["schoolType"]
     password = json_data["password"]
 
+    schoolinfoR =  schoolinfo(schoolRegion,schoolType)
+    if schoolinfoR == 0:
+        print("error")
+        print("교육청 학교 정보 맵핑 실패")
+    else:
+        print("교육청 학교 정보 맵핑 성공")
+        info = schoolinfoR
 
-    info = schoolinfo(schoolRegion,schoolType)
+        schoolCode = info["schoolcode"]
+        schoolLevel = info["schoollevel"]
+        schoolUrl = info["schoolurl"]
 
-    schoolCode = info["schoolcode"]
-    schoolLevel = info["schoollevel"]
-    schoolUrl = info["schoolurl"]
+        loginType = "school"
 
-    loginType = "school"
-
-    selftest(schoolName, studentName, studentBirth, password, loginType, schoolCode, schoolLevel, schoolUrl)
-
+        selftest(schoolName, studentName, studentBirth, password, loginType, schoolCode, schoolLevel, schoolUrl)
 
 for i in range(userNUM):
-    calljson(f"user{i}data")
+            calljson(f"user{i}data")

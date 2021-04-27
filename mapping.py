@@ -32,65 +32,77 @@ def schoolinfo(area, level):
     if area in areas["area1"]:
         schoolcode = "01"
         schoolurl = "sen"
-    if area in areas["area2"]:
+    elif area in areas["area2"]:
         schoolcode = "02"
         schoolurl = "pen"
-    if area in areas["area3"]:
+    elif area in areas["area3"]:
         schoolcode = "03"
         schoolurl = "dge"
-    if area in areas["area4"]:
+    elif area in areas["area4"]:
         schoolcode = "04"
         schoolurl = "ice"
-    if area in areas["area5"]:
+    elif area in areas["area5"]:
         schoolcode = "05"
         schoolurl = "gen"
-    if area in areas["area6"]:
+    elif area in areas["area6"]:
         schoolcode = "06"
         schoolurl = "dje"
-    if area in areas["area7"]:
+    elif area in areas["area7"]:
         schoolcode = "07"
         schoolurl = "use"
-    if area in areas["area8"]:
+    elif area in areas["area8"]:
         schoolcode = "08"
         schoolurl = "sje"
-    if area in areas["area10"]:
+    elif area in areas["area10"]:
         schoolcode = 10
         schoolurl = "goe"
-    if area in areas["area11"]:
+    elif area in areas["area11"]:
         schoolcode = 11
         schoolurl = "kwe"
-    if area in areas["area12"]:
+    elif area in areas["area12"]:
         schoolcode = 12
         schoolurl = "cbe"
-    if area in areas["area13"]:
+    elif area in areas["area13"]:
         schoolcode = 13
         schoolurl = "cne"
-    if area in areas["area14"]:
+    elif area in areas["area14"]:
         schoolcode = 14
         schoolurl = "jbe"
-    if area in areas["area15"]:
+    elif area in areas["area15"]:
         schoolcode = 15
         schoolurl = "jne"
-    if area in areas["area16"]:
+    elif area in areas["area16"]:
         schoolcode = 16
         schoolurl = "gbe"
-    if area in areas["area17"]:
+    elif area in areas["area17"]:
         schoolcode = 17
         schoolurl = "gne"
-    if area in areas["area18"]:
+    elif area in areas["area18"]:
         schoolcode = 18
         schoolurl = "jje"
+    else:
+        schoolcode = "error"
+        schoolurl = "error"
+
+    
     if level in levels["level1"]:
         schoollevel = 1
-    if level in levels["level2"]:
+    elif level in levels["level2"]:
         schoollevel = 2
-    if level in levels["level3"]:
+    elif level in levels["level3"]:
         schoollevel = 3
-    if level in levels["level4"]:
+    elif level in levels["level4"]:
         schoollevel = 4
-    if level in levels["level5"]:
+    elif level in levels["level5"]:
         schoollevel = 5
+    else:
+        schoollevel = 0
+    
     info["schoolcode"] = schoolcode
     info["schoollevel"] = schoollevel
     info["schoolurl"] = schoolurl
-    return info
+
+    if "error" in info.values():
+        return 0
+    else:
+        return info
