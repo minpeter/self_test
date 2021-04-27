@@ -17,7 +17,6 @@ def calljson(jsonfilename):
 
     schoolinfoR =  schoolinfo(schoolRegion,schoolType)
     if schoolinfoR == 0:
-        print("error")
         print("교육청 학교 정보 맵핑 실패")
     else:
         print("교육청 학교 정보 맵핑 성공")
@@ -29,7 +28,8 @@ def calljson(jsonfilename):
 
         loginType = "school"
 
-        selftest(schoolName, studentName, studentBirth, password, loginType, schoolCode, schoolLevel, schoolUrl)
+        msg = selftest(schoolName, studentName, studentBirth, password, loginType, schoolCode, schoolLevel, schoolUrl)
+        print(msg)
 
 for i in range(userNUM):
             calljson(f"user{i}data")

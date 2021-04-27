@@ -1,3 +1,3 @@
 from mapping import schoolinfo
 
-print(schoolinfo("김포","중학교"))
+print(schoolinfo("경기도교육청","고등"))
