@@ -5,8 +5,8 @@ def getUserInfo(token,orgCode,userPNo, URL):
     URL = f'https://{URL}hcs.eduro.go.kr/v2/getUserInfo'
 
     datas = {
-        'orgCode': 'B100000662',
-        'userPNo': '2021000076'
+        'orgCode': orgCode,
+        'userPNo': userPNo
         }
 
     headers = {
@@ -14,5 +14,11 @@ def getUserInfo(token,orgCode,userPNo, URL):
         'Content-Type': 'application/json'
     }
     response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
-    return response["token"]
+    
+    if "token" in response:
+        print("로그인성공")
+        return response["token"]
+    else:
+        print("로그인실패")
+        return 0
 # 예제 print(getUserInfo(token))

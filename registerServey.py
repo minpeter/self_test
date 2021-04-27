@@ -33,5 +33,10 @@ def registerServey(name, token, URL):
 
     #response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)
 
-    return requests.post(URL, headers=headers, data=json.dumps(datas)).text
-    
+    response = requests.post(URL, headers=headers, data=json.dumps(datas)).text
+    if "registerDtm" in response and "inveYmd" in response:
+        print("자가진단 post 성공")
+        return response
+    else:
+        print("자가진단 post 실패")
+        return 0

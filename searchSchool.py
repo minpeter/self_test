@@ -13,8 +13,10 @@ def searchSchool(schoolname, loginType, lctnScCode, schulCrseScCode):
 
     response = json.loads(requests.get(URL, params=paramDict).text)
     if response["schulList"] == []:
-        return "error"
+        print("학교찾기실패")
+        return 0
     else:
+        print("정보와 일치하는 학교를 찾았습니다.")
         return response["schulList"][0]["orgCode"]
 
 
