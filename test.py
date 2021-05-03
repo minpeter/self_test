@@ -1,3 +1,4 @@
-from mapping import schoolinfo
+import os
+path = os.path.dirname(os.path.abspath(__file__))
+print(path)
 
-print(schoolinfo("경기도교육청","고등"))

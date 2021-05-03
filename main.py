@@ -1,11 +1,12 @@
 from mapping import schoolinfo
 from selftest import selftest
 import json
-
-userNUM = 3
+import os
 
 def calljson(jsonfilename):
-    with open(f'userdata/{jsonfilename}.json', 'r') as f:
+
+    path = os.path.dirname(os.path.abspath(__file__))
+    with open(f'{path}/userdata/{jsonfilename}', 'r') as f:
         json_data = json.load(f)
 
     schoolName = json_data["schoolName"]
@@ -30,6 +31,9 @@ def calljson(jsonfilename):
 
         msg = selftest(schoolName, studentName, studentBirth, password, loginType, schoolCode, schoolLevel, schoolUrl)
         print(msg)
+        
+path = os.path.dirname(os.path.abspath(__file__))
+filelist = os.listdir(f'{path}/userdata')
 
-for i in range(userNUM):
-            calljson(f"user{i}data")
+for i in filelist:
+            calljson(i)
