@@ -1,7 +1,6 @@
 # 라이브러리 설치
 * pip install rsa
 * pip install requests
-* pip install json
 
 python3 필요(f-string문법)
 
