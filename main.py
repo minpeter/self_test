@@ -6,7 +6,7 @@ import os
 def calljson(jsonfilename):
 
     path = os.path.dirname(os.path.abspath(__file__))
-    with open(f'{path}/userdata/{jsonfilename}', 'r') as f:
+    with open(f'{path}/userdata/{jsonfilename}', 'r', encoding='UTF8') as f:
         json_data = json.load(f)
 
     schoolName = json_data["schoolName"]
