@@ -14,8 +14,6 @@ def validatePassword(token, pw, URL):
     datas = {
         "deviceUuid": "",
         "password": encrypt(pw)
-
-        #encrypt(pw)
     }
 
     response = json.loads(requests.post(URL, headers=headers, data=json.dumps(datas)).text)

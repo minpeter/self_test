@@ -15,14 +15,14 @@ def selftest(schoolname, studentname, studentbirth, pw, logintype, schoolcode, s
         return "can't school find"
 
     orgCode = searchSchoolR
-    print(f"학교분류코드:{orgCode}")
+    print(f"🎈 학교분류코드:{orgCode}")
         
     findUserR = findUser(orgCode, logintype, studentname, studentbirth, schoolurl)
     if findUserR == 0:
         return "can't user find"
     
     Utoken = findUserR
-    print(f"사용자고유토큰:{Utoken}")
+    print(f"💎 사용자고유토큰:{Utoken}")
 
     if hasPassword(Utoken, schoolurl) == False:
         return "user don't have passorwd"
