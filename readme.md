@@ -1,3 +1,7 @@
+**보안키패드 업데이트로 작동불능이 된 것을 확인하였음**  
+-2021.09.16
+
+
 # 라이브러리 설치
 * pip install rsa
 * pip install requests
